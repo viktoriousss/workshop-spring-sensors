@@ -11,14 +11,14 @@ jobs:
       - name: Log in to Container Registry
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: viktorioustap.azurecr.io
+          username: ${{ secrets.registry_username }}
+          password: ${{ secrets.registry_password }}
       - name: Deploy application to Tanzu Platform
-        uses: cpage-pivotal/tanzu-deploy-action@v1.3
+        uses: viktoriousss/tanzu-deploy-action@v1.3
         with:
           tanzu_api_token: ${{ secrets.TanzuApiToken }}
-          container_registry: viktorioustap.azurecr.io/tanzubuild/{name}
+          container_registry: nemearegistry01.azurecr.io/tanzubuild/{name}
           # buildPlanSource: custom-build-plan
           project: EMEA
           space: viktorious-space01
