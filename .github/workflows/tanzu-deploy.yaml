@@ -11,7 +11,7 @@ jobs:
       - name: Log in to Container Registry
         uses: docker/login-action@v3
         with:
-          registry: viktorioustap.azurecr.io
+          registry: nemearegistry01.azurecr.io
           username: ${{ secrets.registry_username }}
           password: ${{ secrets.registry_password }}
       - name: Deploy application to Tanzu Platform
