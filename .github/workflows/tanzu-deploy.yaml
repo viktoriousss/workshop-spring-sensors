@@ -15,7 +15,7 @@ jobs:
           username: ${{ secrets.registry_username }}
           password: ${{ secrets.registry_password }}
       - name: Deploy application to Tanzu Platform
-        uses: viktoriousss/tanzu-deploy-action@v1.3
+        uses: viktoriousss/tanzu-deploy-action@v0.9
         with:
           tanzu_api_token: ${{ secrets.TanzuApiToken }}
           container_registry: nemearegistry01.azurecr.io/tanzubuild/{name}
